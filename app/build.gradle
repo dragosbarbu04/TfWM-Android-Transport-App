@@ -1,0 +1,105 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    id 'com.google.gms.google-services'
+    alias(libs.plugins.ksp)
+    id("kotlin-parcelize")
+}
+
+android {
+    namespace 'com.bcu.cmp6213.transportapp'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.bcu.cmp6213.transportapp"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // --- API Key Configuration ---
+        // These keys are included in the build for assessment purposes only!
+        // For production, these would be using secure methods and be placed in .gitignore files
+        // For this project, only freely available keys are used.
+        // 1. Google Maps API KEY
+        // Used in AndroidManifest.xml
+        manifestPlaceholders["GOOGLE_MAPS_API_KEY"] = "AIzaSyBu1FomRqCepGbk9tvahqcgMZNPOg2OJ74"
+
+        // 2. Transport for West Midlands (TfWM) API KEY
+        buildConfigField("String", "TFWM_APP_ID", "\"9aaea3f9\"")
+        buildConfigField("String", "TFWM_APP_KEY", "\"2735e2c4b1cf869dabe3c6e691b12da3\"")
+    }
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.activity
+    implementation libs.androidx.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.activity:activity-ktx:1.9.0'
+    implementation 'androidx.fragment:fragment-ktx:1.7.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.8.0'
+    implementation(libs.constraintlayout.v214)
+
+    // Firebase Bill of Materials
+    implementation platform('com.google.firebase:firebase-bom:33.1.0')
+
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    // Firebase Firestore (Cloud Database)
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    // Google Maps SDK and Location
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation("com.google.android.gms:play-services-location:21.2.0")
+
+    // Room for local database (example versions, update as needed)
+    def room_version = "2.6.1"
+    implementation "androidx.room:room-runtime:$room_version"
+
+    // To use Kotlin Symbol Processing (KSP) for Room (recommended for Kotlin)
+    ksp "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version" // For Kotlin Coroutines support
+
+    // Retrofit for Network Calls
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // Async operations
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.0")
+
+    // Testing dependencies
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_routes"
+        android:icon="@drawable/ic_list_alt_24" android:title="Routes" />
+    <item
+        android:id="@+id/navigation_map"
+        android:icon="@drawable/ic_map_24" android:title="Map" />
+    <item
+        android:id="@+id/navigation_tickets"
+        android:icon="@drawable/ic_ticket_24" android:title="Tickets" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_person_24" android:title="Profile" />
+</menu>

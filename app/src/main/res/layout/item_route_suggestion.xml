@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/textViewSuggestionRouteName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            tools:text="Route: X1 - Birmingham City Centre" />
+
+        <TextView
+            android:id="@+id/textViewSuggestionOriginStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_origin_stop_24"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:textAppearance="?attr/textAppearanceBody2"
+            tools:text="From: New Street Station (Stop NS1)" />
+
+        <TextView
+            android:id="@+id/textViewSuggestionOriginTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp" android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            tools:text="Departs: 10:05" />
+
+        <TextView
+            android:id="@+id/textViewSuggestionDestinationStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_destination_stop_24"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:textAppearance="?attr/textAppearanceBody2"
+            tools:text="To: University (Stop U1)" />
+
+        <TextView
+            android:id="@+id/textViewSuggestionDestinationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp" android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            tools:text="Arrives: 10:30" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

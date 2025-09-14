@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.map.MapFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchViewDestination"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="4dp"
+        android:background="@android:color/white"
+        app:queryHint="Enter destination..."
+        app:iconifiedByDefault="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map_container"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchViewDestination"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewSelectedRouteInfo" app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRouteSuggestions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?android:attr/colorBackground"
+        android:elevation="2dp"
+        android:visibility="gone" app:layout_constraintHeight_max="200dp" app:layout_constraintHeight_default="wrap" app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_route_suggestion"
+        tools:visibility="visible"
+        tools:itemCount="2"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewSelectedRouteInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewSelectedRouteName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                tools:text="Route: X1 - Birmingham City Centre" />
+
+            <TextView
+                android:id="@+id/textViewSelectedRouteJourney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="?attr/textAppearanceBody2"
+                tools:text="From: New Street (NS1)\nTo: Old Square (OS2)" />
+
+            <TextView
+                android:id="@+id/textViewSelectedRouteTimes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textAppearance="?attr/textAppearanceCaption"
+                tools:text="Departs: 10:05, Arrives: 10:30" />
+
+            <Button
+                android:id="@+id/buttonConfirmBuyTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Buy Ticket (Mock £2.50)" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCurrentLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_my_location_24"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewSelectedRouteInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Get Current Location" />
+
+    <ProgressBar
+        android:id="@+id/progressBarSuggestions"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewRouteSuggestions"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerViewRouteSuggestions"
+        app:layout_constraintTop_toTopOf="@+id/recyclerViewRouteSuggestions"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewRouteSuggestions"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
