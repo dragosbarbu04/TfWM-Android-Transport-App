@@ -1,6 +1,6 @@
 # Transport for West Midlands (TfWM) - Android Transit App
 
-> **Note:** This project was developed as the final coursework for the CMP6213 Mobile and Wearable Application Development module at Birmingham City University. It is a functional prototype designed to demonstrate a comprehensive understanding of modern Android development practices.
+> **Note:** This project was developed as the final coursework for the CMP6213 Mobile and Wearable Application Development module at Birmingham City University. It is a functional prototype designed to demonstrate a comprehensive understanding of modern Android development practices. Any API Keys and/or other dependencies are free and need be replaced if you are using this project, the existing keys in the project have been deleted.
 
 This is a native Android application, written in **Kotlin**, that serves as a journey planner for the Transport for West Midlands (TfWM) public transport network. The app provides users with secure authentication, GTFS-based route browsing, interactive map-based journey suggestions, and a mock ticketing system using Firebase services.
 
