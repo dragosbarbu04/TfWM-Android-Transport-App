@@ -7,7 +7,7 @@ This is a native Android application, written in **Kotlin**, that serves as a jo
 
 ---
 
-## Key Features 📋
+## Key Features
 
 * **Secure User Authentication:**
     * Full user registration and login system using **Firebase Authentication** (email/password).
@@ -36,7 +36,7 @@ This is a native Android application, written in **Kotlin**, that serves as a jo
 
 ---
 
-## Project Architecture & Design Patterns 🏗️
+## Project Architecture & Design Patterns
 
 This application was built with a modern, robust architecture to ensure separation of concerns, testability, and a responsive user interface.
 
@@ -53,7 +53,7 @@ This application was built with a modern, robust architecture to ensure separati
 
 ---
 
-## Technologies, Libraries & APIs 🛠️
+## Technologies, Libraries & APIs
 
 * **Language:** Kotlin
 * **IDE:** Android Studio
@@ -67,7 +67,7 @@ This application was built with a modern, robust architecture to ensure separati
 
 ---
 
-## Challenges & Solutions 🧠
+## Challenges & Solutions
 
 This project involved solving several real-world development challenges:
 
